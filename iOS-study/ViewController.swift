@@ -16,8 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var reloadButton: UIButton!
     @IBAction func reloadButtonAction(_ sender: UIButton) {
-        WeatherService.fetchWeatherCondition { weather in
-            DispatchQueue.main.async {
+        Task {
+            do {
+                let weather = try await WeatherService.fetchWeatherCondition()
                 switch weather {
                 case "sunny":
                     self.weatherImageView.image = UIImage(named: "icon-sunny")
@@ -28,6 +29,8 @@ class ViewController: UIViewController {
                 default:
                     print("Failed to fetch weather.")
                 }
+            } catch {
+                print("Failed to fetch weather: \(error)")
             }
         }
     }

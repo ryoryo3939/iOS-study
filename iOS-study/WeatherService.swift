@@ -9,12 +9,7 @@ import Foundation
 import YumemiWeather
 
 class WeatherService {
-    static func fetchWeatherCondition(completion: @escaping (String?) -> Void) {
-        DispatchQueue.global(qos: .background).async {
-            let weather = YumemiWeather.fetchWeatherCondition()
-            DispatchQueue.main.async {
-                completion(weather)
-            }
-        }
+    static func fetchWeatherCondition() async throws -> String {
+        return YumemiWeather.fetchWeatherCondition()
     }
 }
