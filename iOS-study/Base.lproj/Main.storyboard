@@ -24,24 +24,24 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G5-rn-rfp">
-                                <rect key="frame" x="196.66666666666666" y="536.66666666666663" width="98.333333333333343" height="21"/>
+                                <rect key="frame" x="196.66666666666666" y="536.66666666666663" width="97.999999999999972" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="Red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG1-B7-2Gz">
-                                <rect key="frame" x="113.66666666666669" y="637.66666666666663" width="67" height="35"/>
+                                <rect key="frame" x="114" y="637.66666666666663" width="67" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Close"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CL6-KJ-I2G">
-                                <rect key="frame" x="98" y="536.66666666666663" width="98.333333333333314" height="21"/>
+                                <rect key="frame" x="98.333333333333343" y="536.66666666666663" width="98.333333333333343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="Blue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujb-wB-smT">
-                                <rect key="frame" x="207.33333333333334" y="637.66666666666663" width="77.000000000000028" height="35"/>
+                                <rect key="frame" x="207" y="637.66666666666663" width="77" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Reload"/>
                             </button>
@@ -49,19 +49,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="CL6-KJ-I2G" firstAttribute="top" secondItem="XkD-Kh-cbi" secondAttribute="bottom" id="0to-66-PEO"/>
-                            <constraint firstItem="CL6-KJ-I2G" firstAttribute="width" secondItem="XkD-Kh-cbi" secondAttribute="width" multiplier="0.5" id="1sM-lU-l67"/>
                             <constraint firstItem="XkD-Kh-cbi" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="3GN-zj-QOU"/>
                             <constraint firstItem="XkD-Kh-cbi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4Jk-pe-rjo"/>
-                            <constraint firstItem="ujb-wB-smT" firstAttribute="top" secondItem="1G5-rn-rfp" secondAttribute="bottom" constant="80" id="Bfc-3g-erO"/>
-                            <constraint firstItem="dG1-B7-2Gz" firstAttribute="top" secondItem="CL6-KJ-I2G" secondAttribute="bottom" constant="80" id="Oej-5p-QWP"/>
+                            <constraint firstItem="CL6-KJ-I2G" firstAttribute="width" secondItem="XkD-Kh-cbi" secondAttribute="width" multiplier="0.5" id="At7-qy-uKM"/>
+                            <constraint firstItem="ujb-wB-smT" firstAttribute="top" secondItem="1G5-rn-rfp" secondAttribute="bottom" constant="80" id="BY0-GN-lrA"/>
+                            <constraint firstItem="CL6-KJ-I2G" firstAttribute="top" secondItem="XkD-Kh-cbi" secondAttribute="bottom" id="JUM-Sr-IYi"/>
+                            <constraint firstItem="CL6-KJ-I2G" firstAttribute="leading" secondItem="XkD-Kh-cbi" secondAttribute="leading" id="P5K-ku-Y96"/>
                             <constraint firstItem="dG1-B7-2Gz" firstAttribute="centerX" secondItem="CL6-KJ-I2G" secondAttribute="centerX" id="PD8-TM-wcy"/>
-                            <constraint firstItem="1G5-rn-rfp" firstAttribute="width" secondItem="XkD-Kh-cbi" secondAttribute="width" multiplier="0.5" id="WJl-Ca-JKY"/>
-                            <constraint firstItem="1G5-rn-rfp" firstAttribute="leading" secondItem="XkD-Kh-cbi" secondAttribute="trailing" constant="-98" id="Z7Y-89-9xU"/>
                             <constraint firstItem="XkD-Kh-cbi" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="bdj-hk-K6J"/>
+                            <constraint firstItem="1G5-rn-rfp" firstAttribute="top" secondItem="XkD-Kh-cbi" secondAttribute="bottom" id="lis-lM-zbt"/>
                             <constraint firstItem="ujb-wB-smT" firstAttribute="centerX" secondItem="1G5-rn-rfp" secondAttribute="centerX" id="paX-Ak-zEV"/>
-                            <constraint firstItem="1G5-rn-rfp" firstAttribute="top" secondItem="XkD-Kh-cbi" secondAttribute="bottom" id="qr9-if-6fh"/>
-                            <constraint firstItem="XkD-Kh-cbi" firstAttribute="leading" secondItem="CL6-KJ-I2G" secondAttribute="trailing" constant="-97.999999999999986" id="uNm-3M-Bgm"/>
+                            <constraint firstItem="dG1-B7-2Gz" firstAttribute="top" secondItem="CL6-KJ-I2G" secondAttribute="bottom" constant="80" id="wC0-mn-2cd"/>
+                            <constraint firstItem="1G5-rn-rfp" firstAttribute="trailing" secondItem="XkD-Kh-cbi" secondAttribute="trailing" id="waL-7s-Rf7"/>
+                            <constraint firstItem="1G5-rn-rfp" firstAttribute="width" secondItem="XkD-Kh-cbi" secondAttribute="width" multiplier="0.5" id="zWT-LC-dKd"/>
                         </constraints>
                     </view>
                 </viewController>
