@@ -8,8 +8,18 @@
 import Foundation
 import YumemiWeather
 
+protocol WeatherServiceDelegate: AnyObject {
+    func weatherService(_ service: WeatherService, didUpdateWeather weather: String)
+}
+
 class WeatherService {
-    static func fetchWeatherCondition() async throws -> String {
-        return YumemiWeather.fetchWeatherCondition()
+    weak var delegate: WeatherServiceDelegate?
+
+    func fetchWeather() {
+        // 天気を非同期に取得するコード
+        let weather = YumemiWeather.fetchWeatherCondition()
+        
+        // delegateメソッドを呼び出す
+        self.delegate?.weatherService(self, didUpdateWeather: weather)
     }
 }
