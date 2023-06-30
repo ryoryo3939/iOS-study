@@ -30,7 +30,7 @@ class WeatherViewController: UIViewController, WeatherServiceDelegate {
     }
     
     // WeatherServiceDelegate method
-    func weatherService(_ service: WeatherService, didUpdateWeather weather: String) {
+    func didUpdateWeather(_ service: WeatherService, weather: String) {
         switch weather {
         case "sunny":
             self.weatherImageView.image = UIImage(named: "icon-sunny")

@@ -9,7 +9,7 @@ import Foundation
 import YumemiWeather
 
 protocol WeatherServiceDelegate: AnyObject {
-    func weatherService(_ service: WeatherService, didUpdateWeather weather: String)
+    func didUpdateWeather(_ service: WeatherService, weather: String)
 }
 
 class WeatherService {
@@ -18,8 +18,8 @@ class WeatherService {
     func fetchWeather() {
         // 天気を非同期に取得するコード
         let weather = YumemiWeather.fetchWeatherCondition()
-        
+
         // delegateメソッドを呼び出す
-        self.delegate?.weatherService(self, didUpdateWeather: weather)
+        self.delegate?.didUpdateWeather(self, weather: weather)
     }
 }
