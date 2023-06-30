@@ -19,6 +19,7 @@
 		C755CB912A4196C700FBA3E2 /* iOS_studyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C755CB902A4196C700FBA3E2 /* iOS_studyUITestsLaunchTests.swift */; };
 		C755CB9F2A4197CE00FBA3E2 /* YumemiWeather in Frameworks */ = {isa = PBXBuildFile; productRef = C755CB9E2A4197CE00FBA3E2 /* YumemiWeather */; };
 		C777F1DE2A45397E004313E6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C777F1DD2A45397E004313E6 /* FirstViewController.swift */; };
+		C7EBCE532A4EAF7A006A3AA7 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EBCE522A4EAF7A006A3AA7 /* WeatherType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		C755CB8E2A4196C700FBA3E2 /* iOS_studyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_studyUITests.swift; sourceTree = "<group>"; };
 		C755CB902A4196C700FBA3E2 /* iOS_studyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_studyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C777F1DD2A45397E004313E6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		C7EBCE522A4EAF7A006A3AA7 /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				C755CB782A4196C700FBA3E2 /* LaunchScreen.storyboard */,
 				C755CB7B2A4196C700FBA3E2 /* Info.plist */,
 				C72E55FF2A43D2DC0018737D /* WeatherService.swift */,
+				C7EBCE522A4EAF7A006A3AA7 /* WeatherType.swift */,
 			);
 			path = "iOS-study";
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				C755CB722A4196C600FBA3E2 /* WeatherViewController.swift in Sources */,
 				C777F1DE2A45397E004313E6 /* FirstViewController.swift in Sources */,
 				C755CB6E2A4196C600FBA3E2 /* AppDelegate.swift in Sources */,
+				C7EBCE532A4EAF7A006A3AA7 /* WeatherType.swift in Sources */,
 				C755CB702A4196C600FBA3E2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

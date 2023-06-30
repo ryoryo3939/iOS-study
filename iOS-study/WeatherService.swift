@@ -9,7 +9,7 @@ import Foundation
 import YumemiWeather
 
 protocol WeatherServiceDelegate: AnyObject {
-    func didUpdateWeather(_ service: WeatherService, weather: String)
+    func didUpdateWeather(_ service: WeatherService, weaterType: WeatherType?)
 }
 
 class WeatherService {
@@ -20,6 +20,6 @@ class WeatherService {
         let weather = YumemiWeather.fetchWeatherCondition()
 
         // delegateメソッドを呼び出す
-        self.delegate?.didUpdateWeather(self, weather: weather)
+        self.delegate?.didUpdateWeather(self, weaterType: WeatherType(rawValue: weather))
     }
 }

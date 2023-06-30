@@ -29,19 +29,9 @@ class WeatherViewController: UIViewController, WeatherServiceDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    // WeatherServiceDelegate method
-    func didUpdateWeather(_ service: WeatherService, weather: String) {
-        switch weather {
-        case "sunny":
-            self.weatherImageView.image = UIImage(named: "icon-sunny")
-        case "cloudy":
-            self.weatherImageView.image = UIImage(named: "icon-cloudy")
-        case "rainy":
-            self.weatherImageView.image = UIImage(named: "icon-rainy")
-        default:
-            print("Failed to fetch weather.")
-        }
-    }
+    func didUpdateWeather(_ service: WeatherService, weaterType: WeatherType?) {
+                self.weatherImageView.image = weaterType?.image
+     }
     
     deinit {
         print("WeatherViewController deinitialized")
