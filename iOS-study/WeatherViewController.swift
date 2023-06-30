@@ -9,20 +9,20 @@ import UIKit
 
 class WeatherViewController: UIViewController, WeatherServiceDelegate {
     
-    var weatherService: WeatherService?
+    var weatherService = WeatherService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         weatherService = WeatherService()
-        weatherService?.delegate = self
+        weatherService.delegate = self
     }
     
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var reloadButton: UIButton!
     
     @IBAction func reloadButtonAction(_ sender: UIButton) {
-        weatherService?.fetchWeather()
+        weatherService.fetchWeather()
     }
     
     @IBAction func closeButtonTapped(_ sender: Any) {
