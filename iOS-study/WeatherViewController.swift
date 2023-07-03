@@ -7,35 +7,33 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, WeatherServiceDelegate {
+    
+    var weatherService = WeatherService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        weatherService = WeatherService()
+        weatherService.delegate = self
     }
+    
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var reloadButton: UIButton!
+    
     @IBAction func reloadButtonAction(_ sender: UIButton) {
-        Task {
-            do {
-                let weather = try await WeatherService.fetchWeatherCondition()
-                switch weather {
-                case "sunny":
-                    self.weatherImageView.image = UIImage(named: "icon-sunny")
-                case "cloudy":
-                    self.weatherImageView.image = UIImage(named: "icon-cloudy")
-                case "rainy":
-                    self.weatherImageView.image = UIImage(named: "icon-rainy")
-                default:
-                    print("Failed to fetch weather.")
-                }
-            } catch {
-                print("Failed to fetch weather: \(error)")
-            }
-        }
+        weatherService.fetchWeather()
     }
     
     @IBAction func closeButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func didUpdateWeather(_ service: WeatherService, weaterType: WeatherType?) {
+                self.weatherImageView.image = weaterType?.image
+     }
+    
+    deinit {
+        print("WeatherViewController deinitialized")
     }
 }
