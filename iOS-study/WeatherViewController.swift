@@ -34,26 +34,6 @@ class WeatherViewController: UIViewController, WeatherServiceDelegate {
                 self.weatherImageView.image = weatherType?.image
      }
     
-    func didFailWithError(_ service: WeatherService, error: Error) {
-        let errorMessage = makeErrorMessage(from: error)
-        let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func makeErrorMessage(from error: Error) -> String {
-        if let yumemiError = error as? YumemiWeatherError {
-            switch yumemiError {
-            case .invalidParameterError:
-                return "Invalid parameters!"
-            case .unknownError:
-                return "An unknown error occurred!"
-            }
-        } else {
-            return error.localizedDescription
-        }
-    }
-    
     deinit {
         print("WeatherViewController deinitialized")
     }
