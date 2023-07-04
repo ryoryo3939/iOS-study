@@ -35,22 +35,21 @@ class WeatherViewController: UIViewController, WeatherServiceDelegate {
      }
     
     func didFailWithError(_ service: WeatherService, error: Error) {
-        let errorMessage = makeErrorMessage(from: error)
+        let errorMessage = makeErrorMessage(error)
         let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
 
-    func makeErrorMessage(from error: Error) -> String {
-        if let yumemiError = error as? YumemiWeatherError {
-            switch yumemiError {
-            case .invalidParameterError:
-                return "Invalid parameters!"
-            case .unknownError:
-                return "An unknown error occurred!"
-            }
-        } else {
+    func makeErrorMessage(_ error: Error) -> String {
+        guard let weatherError = error as? YumemiWeatherError else {
             return error.localizedDescription
+        }
+        switch weatherError {
+        case .invalidParameterError:
+            return "Invalid parameters!"
+        case .unknownError:
+            return "An unknown error occurred!"
         }
     }
     
