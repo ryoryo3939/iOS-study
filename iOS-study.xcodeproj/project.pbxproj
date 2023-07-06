@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C72E56002A43D2DC0018737D /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E55FF2A43D2DC0018737D /* WeatherService.swift */; };
+		C73B6F732A5669EB0063F9E5 /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B6F722A5669EB0063F9E5 /* WeatherRequest.swift */; };
+		C73B6F752A566A250063F9E5 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B6F742A566A250063F9E5 /* WeatherResponse.swift */; };
+		C73B6F772A5675C20063F9E5 /* ImageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B6F762A5675C20063F9E5 /* ImageColor.swift */; };
 		C755CB6E2A4196C600FBA3E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C755CB6D2A4196C600FBA3E2 /* AppDelegate.swift */; };
 		C755CB702A4196C600FBA3E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C755CB6F2A4196C600FBA3E2 /* SceneDelegate.swift */; };
 		C755CB722A4196C600FBA3E2 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C755CB712A4196C600FBA3E2 /* WeatherViewController.swift */; };
@@ -41,6 +44,9 @@
 
 /* Begin PBXFileReference section */
 		C72E55FF2A43D2DC0018737D /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		C73B6F722A5669EB0063F9E5 /* WeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
+		C73B6F742A566A250063F9E5 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		C73B6F762A5675C20063F9E5 /* ImageColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageColor.swift; sourceTree = "<group>"; };
 		C755CB6A2A4196C600FBA3E2 /* iOS-study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-study.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C755CB6D2A4196C600FBA3E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C755CB6F2A4196C600FBA3E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +123,9 @@
 				C755CB7B2A4196C700FBA3E2 /* Info.plist */,
 				C72E55FF2A43D2DC0018737D /* WeatherService.swift */,
 				C7EBCE522A4EAF7A006A3AA7 /* WeatherType.swift */,
+				C73B6F722A5669EB0063F9E5 /* WeatherRequest.swift */,
+				C73B6F742A566A250063F9E5 /* WeatherResponse.swift */,
+				C73B6F762A5675C20063F9E5 /* ImageColor.swift */,
 			);
 			path = "iOS-study";
 			sourceTree = "<group>";
@@ -275,12 +284,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C73B6F772A5675C20063F9E5 /* ImageColor.swift in Sources */,
 				C72E56002A43D2DC0018737D /* WeatherService.swift in Sources */,
 				C755CB722A4196C600FBA3E2 /* WeatherViewController.swift in Sources */,
 				C777F1DE2A45397E004313E6 /* FirstViewController.swift in Sources */,
 				C755CB6E2A4196C600FBA3E2 /* AppDelegate.swift in Sources */,
 				C7EBCE532A4EAF7A006A3AA7 /* WeatherType.swift in Sources */,
+				C73B6F732A5669EB0063F9E5 /* WeatherRequest.swift in Sources */,
 				C755CB702A4196C600FBA3E2 /* SceneDelegate.swift in Sources */,
+				C73B6F752A566A250063F9E5 /* WeatherResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

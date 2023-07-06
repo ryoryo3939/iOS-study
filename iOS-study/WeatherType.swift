@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum WeatherType: String {
+enum WeatherType: String, Codable{
     case sunny
     case cloudy
     case rainy
@@ -16,11 +16,11 @@ enum WeatherType: String {
     var image: UIImage {
         switch self {
         case .sunny:
-            return UIImage(named: "icon-sunny")!
+            return (UIImage(named: "icon-sunny")?.withTintColor(.customOrange))!
         case .cloudy:
-            return UIImage(named: "icon-cloudy")!
+            return (UIImage(named: "icon-cloudy")?.withTintColor(.customGrey))!
         case .rainy:
-            return UIImage(named: "icon-rainy")!
+            return (UIImage(named: "icon-rainy")?.withTintColor(.customLightBlue))!
         }
     }
 }
