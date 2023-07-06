@@ -10,16 +10,19 @@ import YumemiWeather
 
 protocol WeatherServiceDelegate: AnyObject {
     func didUpdateWeather(_ service: WeatherService, weatherType: WeatherType?)
+    func didFailWithError(_ service: WeatherService, error: Error)
 }
 
 class WeatherService {
     weak var delegate: WeatherServiceDelegate?
 
     func fetchWeather() {
-        // 天気を非同期に取得するコード
-        let weather = YumemiWeather.fetchWeatherCondition()
-
-        // delegateメソッドを呼び出す
-        self.delegate?.didUpdateWeather(self, weatherType: WeatherType(rawValue: weather))
+        do {
+            let weather = try YumemiWeather.fetchWeatherCondition(at: "tokyo") // tryを使ってエラーを捕捉
+            let weatherType = WeatherType(rawValue: weather)
+            self.delegate?.didUpdateWeather(self, weatherType: weatherType)
+        } catch let error {
+            self.delegate?.didFailWithError(self, error: error) // エラーが発生したらdelegateメソッドを呼び出す
+        }
     }
 }
