@@ -7,13 +7,9 @@
 
 import Foundation
 
-struct Response: Codable {
+struct WeatherResponse: Codable {
     let weatherCondition: String
     let minTemperature: Int
     let maxTemperature: Int
     let date: String
-
-    func getWeatherType() -> WeatherType? {
-        return WeatherType(rawValue: weatherCondition)
-    }
 }
