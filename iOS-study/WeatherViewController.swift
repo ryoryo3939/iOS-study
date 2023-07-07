@@ -14,9 +14,17 @@ class WeatherViewController: UIViewController, WeatherServiceDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         weatherService = WeatherService()
         weatherService.delegate = self
+
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        
+        weatherService.fetchWeather()
+    }
+
+    @objc func appDidBecomeActive() {
+        weatherService.fetchWeather()
     }
     
     @IBOutlet weak var weatherImageView: UIImageView!
