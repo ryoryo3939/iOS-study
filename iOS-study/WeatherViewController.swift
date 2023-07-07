@@ -21,6 +21,8 @@ class WeatherViewController: UIViewController, WeatherServiceDelegate {
     
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var reloadButton: UIButton!
+    @IBOutlet weak var lowestTemperature: UILabel!
+    @IBOutlet weak var highestTemperature: UILabel!
     
     @IBAction func reloadButtonAction(_ sender: UIButton) {
         weatherService.fetchWeather()
@@ -30,8 +32,10 @@ class WeatherViewController: UIViewController, WeatherServiceDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func didUpdateWeather(_ service: WeatherService, weatherType: WeatherType?) {
-                self.weatherImageView.image = weatherType?.image
+    func didUpdateWeather(_ service: WeatherService, weatherResponse: WeatherResponse, weatherType: WeatherType) {
+        self.weatherImageView.image = weatherType.image
+        self.lowestTemperature.text = "\(weatherResponse.minTemperature)"
+        self.highestTemperature.text = "\(weatherResponse.maxTemperature)"
      }
     
     func didFailWithError(_ service: WeatherService, error: Error) {

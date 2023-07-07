@@ -73,6 +73,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="0av-0r-Cpl"/>
                     <connections>
+                        <outlet property="highestTemperature" destination="1G5-rn-rfp" id="TBf-Dv-U98"/>
+                        <outlet property="lowestTemperature" destination="CL6-KJ-I2G" id="Lme-gs-cP4"/>
                         <outlet property="reloadButton" destination="ujb-wB-smT" id="Ho0-HZ-pzD"/>
                         <outlet property="weatherImageView" destination="XkD-Kh-cbi" id="Vfx-B3-BYA"/>
                     </connections>
