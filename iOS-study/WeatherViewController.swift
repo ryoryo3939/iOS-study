@@ -47,10 +47,12 @@ class WeatherViewController: UIViewController, WeatherServiceDelegate {
      }
     
     func didFailWithError(_ service: WeatherService, error: Error) {
-        let errorMessage = makeErrorMessage(error)
-        let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let errorMessage = self.makeErrorMessage(error)
+            let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 
     func makeErrorMessage(_ error: Error) -> String {
