@@ -33,8 +33,7 @@ class WeatherViewController: UIViewController, WeatherServiceDelegate {
     }
     
     func didUpdateWeather(_ service: WeatherService, weatherResponse: WeatherResponse, weatherType: WeatherType) {
-        let weatherType = WeatherType(rawValue: weatherResponse.weatherCondition)
-        self.weatherImageView.image = weatherType?.image
+        self.weatherImageView.image = weatherType.image
         self.lowestTemperature.text = "\(weatherResponse.minTemperature)"
         self.highestTemperature.text = "\(weatherResponse.maxTemperature)"
      }
