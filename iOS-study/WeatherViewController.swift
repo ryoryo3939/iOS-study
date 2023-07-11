@@ -18,12 +18,12 @@ class WeatherViewController: UIViewController, WeatherServiceDelegate {
         weatherService = WeatherService()
         weatherService.delegate = self
 
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshWeatherOnActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         
         weatherService.fetchWeather()
     }
 
-    @objc func appDidBecomeActive() {
+    @objc func refreshWeatherOnActive() {
         weatherService.fetchWeather()
     }
     
