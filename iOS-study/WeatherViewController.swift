@@ -14,9 +14,17 @@ class WeatherViewController: UIViewController, WeatherServiceDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         weatherService = WeatherService()
         weatherService.delegate = self
+
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshWeatherOnActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        
+        weatherService.fetchWeather()
+    }
+
+    @objc func refreshWeatherOnActive() {
+        weatherService.fetchWeather()
     }
     
     @IBOutlet weak var weatherImageView: UIImageView!
@@ -39,10 +47,12 @@ class WeatherViewController: UIViewController, WeatherServiceDelegate {
      }
     
     func didFailWithError(_ service: WeatherService, error: Error) {
-        let errorMessage = makeErrorMessage(error)
-        let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let errorMessage = self.makeErrorMessage(error)
+            let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 
     func makeErrorMessage(_ error: Error) -> String {
