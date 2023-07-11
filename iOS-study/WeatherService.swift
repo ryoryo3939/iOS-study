@@ -13,9 +13,16 @@ protocol WeatherServiceDelegate: AnyObject {
     func didFailWithError(_ service: WeatherService, error: Error)
 }
 
+class YumemiWeatherService: WeatherFetchable {
+    func fetchWeather(_ jsonString: String) throws -> String {
+        return try YumemiWeather.fetchWeather(jsonString)
+    }
+}
+
 class WeatherService {
     weak var delegate: WeatherServiceDelegate?
-
+    var weatherFetcher: WeatherFetchable = YumemiWeatherService()
+    
     func fetchWeather() {
         do {
             let now = Date()
