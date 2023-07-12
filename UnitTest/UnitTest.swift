@@ -76,10 +76,10 @@ class WeatherServiceTests: XCTestCase {
         // Given
         mockFetcher.jsonStringToReturn = """
         {
-            "max_temp": 10,
-            "min_temp": -5,
-            "date": "2023-07-11T14:05:47+09:00",
-            "weather": "sunny"
+            "weather_condition": "sunny",
+            "min_temperature": -5,
+            "max_temperature": 10,
+            "date": "2023-07-11T14:05:47+09:00"
         }
         """
 
