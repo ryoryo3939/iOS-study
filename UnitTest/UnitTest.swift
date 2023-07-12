@@ -10,43 +10,52 @@ import XCTest
 
 class WeatherViewControllerTests: XCTestCase {
     var sut: WeatherViewController!
-    
+    var weatherServiceMock: WeatherServiceMock!
+
     override func setUp() {
         super.setUp()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(withIdentifier: "WeatherViewController") as? WeatherViewController
-            sut.loadViewIfNeeded()
+        weatherServiceMock = WeatherServiceMock()
+        sut.weatherService = weatherServiceMock
+        sut.weatherService.delegate = sut
+        sut.loadViewIfNeeded()
     }
-        
+
     func testSunnyWeatherDisplaysSunnyImage() {
-        sut.didUpdateWeather(sut.weatherService, weatherResponse: WeatherResponse(weatherCondition: "sunny", minTemperature: 0, maxTemperature: 0, date: ""), weatherType: .sunny)
-            
-        XCTAssertEqual(sut.weatherImageView.image, UIImage(named: "sunny"))
+        weatherServiceMock.weatherResponse = WeatherResponse(weatherCondition: "sunny", minTemperature: 0, maxTemperature: 0, date: "")
+        weatherServiceMock.weatherType = .sunny
+        weatherServiceMock.fetchWeather()
+        XCTAssertEqual(sut.weatherImageView.image, WeatherType.sunny.image)
     }
-        
+
     func testCloudyWeatherDisplaysCloudyImage() {
-        sut.didUpdateWeather(sut.weatherService, weatherResponse: WeatherResponse(weatherCondition: "cloudy", minTemperature: 0, maxTemperature: 0, date: ""), weatherType: .cloudy)
-            
-        XCTAssertEqual(sut.weatherImageView.image, UIImage(named: "cloudy"))
+        weatherServiceMock.weatherResponse = WeatherResponse(weatherCondition: "cloudy", minTemperature: 0, maxTemperature: 0, date: "")
+        weatherServiceMock.weatherType = .cloudy
+        weatherServiceMock.fetchWeather()
+        XCTAssertEqual(sut.weatherImageView.image, WeatherType.cloudy.image)
     }
-        
+
     func testRainyWeatherDisplaysRainyImage() {
-        sut.didUpdateWeather(sut.weatherService, weatherResponse: WeatherResponse(weatherCondition: "rainy", minTemperature: 0, maxTemperature: 0, date: ""), weatherType: .rainy)
-            
-        XCTAssertEqual(sut.weatherImageView.image, UIImage(named: "rainy"))
+        weatherServiceMock.weatherResponse = WeatherResponse(weatherCondition: "rainy", minTemperature: 0, maxTemperature: 0, date: "")
+        weatherServiceMock.weatherType = .rainy
+        weatherServiceMock.fetchWeather()
+        XCTAssertEqual(sut.weatherImageView.image, WeatherType.rainy.image)
     }
-        
+
     func testMaxTemperatureIsDisplayed() {
         let expectedTemperature = 30
-        sut.didUpdateWeather(sut.weatherService, weatherResponse: WeatherResponse(weatherCondition: "sunny", minTemperature: 0, maxTemperature: expectedTemperature, date: ""), weatherType: .sunny)
-            
+        weatherServiceMock.weatherResponse = WeatherResponse(weatherCondition: "sunny", minTemperature: 0, maxTemperature: expectedTemperature, date: "")
+        weatherServiceMock.weatherType = .sunny
+        weatherServiceMock.fetchWeather()
         XCTAssertEqual(sut.highestTemperature.text, "\(expectedTemperature)")
     }
-        
+
     func testMinTemperatureIsDisplayed() {
         let expectedTemperature = 20
-        sut.didUpdateWeather(sut.weatherService, weatherResponse: WeatherResponse(weatherCondition: "sunny", minTemperature: expectedTemperature, maxTemperature: 0, date: ""), weatherType: .sunny)
-            
+        weatherServiceMock.weatherResponse = WeatherResponse(weatherCondition: "sunny", minTemperature: expectedTemperature, maxTemperature: 0, date: "")
+        weatherServiceMock.weatherType = .sunny
+        weatherServiceMock.fetchWeather()
         XCTAssertEqual(sut.lowestTemperature.text, "\(expectedTemperature)")
     }
 }
