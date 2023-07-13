@@ -10,7 +10,7 @@
 		C72E56002A43D2DC0018737D /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E55FF2A43D2DC0018737D /* WeatherService.swift */; };
 		C736096A2A5EBF68003DF389 /* WeatherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A88A302A5D55CE0076BA55 /* WeatherMock.swift */; };
 		C736096B2A5EBF6C003DF389 /* WeatherMockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A88A322A5D55EE0076BA55 /* WeatherMockDelegate.swift */; };
-		C736096C2A5EBF6E003DF389 /* WeatherFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A88A2E2A5D1E640076BA55 /* WeatherFetchable.swift */; };
+		C736096F2A5FD338003DF389 /* WeatherFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A88A2E2A5D1E640076BA55 /* WeatherFetchable.swift */; };
 		C73B6F732A5669EB0063F9E5 /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B6F722A5669EB0063F9E5 /* WeatherRequest.swift */; };
 		C73B6F752A566A250063F9E5 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B6F742A566A250063F9E5 /* WeatherResponse.swift */; };
 		C73B6F772A5675C20063F9E5 /* ImageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B6F762A5675C20063F9E5 /* ImageColor.swift */; };
@@ -157,6 +157,7 @@
 				C73B6F762A5675C20063F9E5 /* ImageColor.swift */,
 				C73B6F782A579D610063F9E5 /* JSONDecoder.swift */,
 				C73B6F7A2A579F510063F9E5 /* DataFormatter.swift */,
+				C7A88A2E2A5D1E640076BA55 /* WeatherFetchable.swift */,
 			);
 			path = "iOS-study";
 			sourceTree = "<group>";
@@ -181,7 +182,6 @@
 		C7A88A262A5D16C80076BA55 /* UnitTest */ = {
 			isa = PBXGroup;
 			children = (
-				C7A88A2E2A5D1E640076BA55 /* WeatherFetchable.swift */,
 				C7A88A322A5D55EE0076BA55 /* WeatherMockDelegate.swift */,
 				C7A88A302A5D55CE0076BA55 /* WeatherMock.swift */,
 				C7A88A272A5D16C80076BA55 /* UnitTest.swift */,
@@ -359,6 +359,7 @@
 				C73B6F772A5675C20063F9E5 /* ImageColor.swift in Sources */,
 				C72E56002A43D2DC0018737D /* WeatherService.swift in Sources */,
 				C755CB722A4196C600FBA3E2 /* WeatherViewController.swift in Sources */,
+				C736096F2A5FD338003DF389 /* WeatherFetchable.swift in Sources */,
 				C777F1DE2A45397E004313E6 /* FirstViewController.swift in Sources */,
 				C755CB6E2A4196C600FBA3E2 /* AppDelegate.swift in Sources */,
 				C7EBCE532A4EAF7A006A3AA7 /* WeatherType.swift in Sources */,
@@ -394,7 +395,6 @@
 				C736096A2A5EBF68003DF389 /* WeatherMock.swift in Sources */,
 				C736096B2A5EBF6C003DF389 /* WeatherMockDelegate.swift in Sources */,
 				C7A88A282A5D16C80076BA55 /* UnitTest.swift in Sources */,
-				C736096C2A5EBF6E003DF389 /* WeatherFetchable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

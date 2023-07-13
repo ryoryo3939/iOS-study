@@ -6,6 +6,7 @@
 //
 
 import Foundation
+@testable import iOS_study
 
 class YumemiWeatherMockDelegate: WeatherServiceDelegate {
     var lastWeatherResponse: WeatherResponse?

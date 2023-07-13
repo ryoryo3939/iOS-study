@@ -6,6 +6,7 @@
 //
 
 import Foundation
+@testable import iOS_study
 
 class YumemiWeatherMock: WeatherFetchable {
     var jsonStringToReturn: String?
