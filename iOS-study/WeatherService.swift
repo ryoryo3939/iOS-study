@@ -13,22 +13,15 @@ protocol WeatherServiceDelegate: AnyObject {
     func didFailWithError(_ service: WeatherService, error: Error)
 }
 
-class YumemiWeatherService: WeatherFetchable {
-    func fetchWeather(_ jsonString: String) throws -> String {
-        return try YumemiWeather.fetchWeather(jsonString)
-    }
-}
-
 class WeatherService {
     weak var delegate: WeatherServiceDelegate?
-    var weatherFetcher: WeatherFetchable = YumemiWeatherService()
     
     func fetchWeather() {
         do {
             let now = Date()
             let dateString = DateFormatter.iso8601Full.string(from: now)
             let jsonString = "{\"area\":\"tokyo\",\"date\":\"\(dateString)\"}"
-            let weatherJsonString = try weatherFetcher.fetchWeather(jsonString)
+            let weatherJsonString = try YumemiWeather.fetchWeather(jsonString)
             print(weatherJsonString)//受け渡している値を表示
             guard let jsonData = weatherJsonString.data(using: .utf8) else {
                 print("Failed to convert weatherJsonString to Data.")// nilの場合やエンコードできない場合にはメッセージを表示
