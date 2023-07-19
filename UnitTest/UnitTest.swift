@@ -60,30 +60,30 @@ class WeatherViewControllerTests: XCTestCase {
     }
 }
 
+
 class WeatherServiceTests: XCTestCase {
     var sut: WeatherService!
-    var mockFetcher: YumemiWeatherMock!
+    var mockService: WeatherServiceMock!
     var mockDelegate: YumemiWeatherMockDelegate!
 
     override func setUpWithError() throws {
         super.setUp()
-        mockFetcher = YumemiWeatherMock()
         mockDelegate = YumemiWeatherMockDelegate()
-        sut = WeatherService()
-        sut.weatherFetcher = mockFetcher
-        sut.delegate = mockDelegate
+        mockService = WeatherServiceMock()
+        mockService.delegate = mockDelegate
+        sut = mockService
     }
 
     override func tearDownWithError() throws {
         sut = nil
-        mockFetcher = nil
+        mockService = nil
         mockDelegate = nil
         super.tearDown()
     }
 
     func testJsonDecoding() throws {
         // Given
-        mockFetcher.jsonStringToReturn = """
+        mockService.jsonStringToReturn = """
         {
             "weather_condition": "sunny",
             "min_temperature": -5,
@@ -91,6 +91,7 @@ class WeatherServiceTests: XCTestCase {
             "date": "2023-07-11T14:05:47+09:00"
         }
         """
+        mockService.fetchWeather()
 
         // When
         sut.fetchWeather()
