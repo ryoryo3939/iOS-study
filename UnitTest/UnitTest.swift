@@ -82,7 +82,6 @@ class WeatherServiceTests: XCTestCase {
     }
 
     func testJsonDecoding() throws {
-        // Given
         mockService.jsonStringToReturn = """
         {
             "weather_condition": "sunny",
@@ -93,10 +92,6 @@ class WeatherServiceTests: XCTestCase {
         """
         mockService.fetchWeather()
 
-        // When
-        sut.fetchWeather()
-
-        // Then
         XCTAssertNotNil(mockDelegate.lastWeatherResponse)
         XCTAssertEqual(mockDelegate.lastWeatherResponse?.weatherCondition, "sunny")
         XCTAssertEqual(mockDelegate.lastWeatherResponse?.minTemperature, -5)
