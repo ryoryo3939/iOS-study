@@ -62,7 +62,6 @@ class WeatherViewControllerTests: XCTestCase {
 
 
 class WeatherServiceTests: XCTestCase {
-    var sut: WeatherService!
     var mockService: WeatherServiceMock!
     var mockDelegate: YumemiWeatherMockDelegate!
 
@@ -71,11 +70,9 @@ class WeatherServiceTests: XCTestCase {
         mockDelegate = YumemiWeatherMockDelegate()
         mockService = WeatherServiceMock()
         mockService.delegate = mockDelegate
-        sut = mockService
     }
 
     override func tearDownWithError() throws {
-        sut = nil
         mockService = nil
         mockDelegate = nil
         super.tearDown()
