@@ -15,7 +15,7 @@ protocol WeatherServiceDelegate: AnyObject {
 
 class WeatherService {
     weak var delegate: WeatherServiceDelegate?
-
+    
     func fetchWeather() {
         do {
             let now = Date()
